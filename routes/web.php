@@ -19,6 +19,3 @@ Route::get('/', function () {
 });
 
 Route::get('storage',[StorageController::class,'hideRoot']);
-
-Route::get('/carrusel', [CarruselController::class, 'show']);
-Route::get('/seleccion', [CarruselController::class, 'selectPlayList']);
