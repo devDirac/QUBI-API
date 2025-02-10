@@ -24,8 +24,8 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center">
-                    <img src="{{ URL::to('/') }}/img/logo.png" alt="" width="200">    
+                <div class="flex justify-center" style="color:#ffff">
+                   QUBI
                 </div>
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0" style="padding-top:14px">
                         Pwered by Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
