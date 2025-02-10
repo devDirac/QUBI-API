@@ -1,7 +1,7 @@
 {
-    "name": "apm152/apm152",
+    "name": "qubi/qubi",
     "type": "project",
-    "description": "Apm sistem.",
+    "description": "QUBI sistem.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
