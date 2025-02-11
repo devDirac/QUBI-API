@@ -82,15 +82,15 @@ class GeoJsonController extends BaseController
                 if (!empty($subfolders)) {
                     $subfolderName = basename($subfolders[0]);
                     $gdbPath = storage_path("app/documentos/juno/" . $request->id_proyecto . "/" . $reporte->id."/unzipped/". $subfolderName );
-                    $command = "ogrinfo -ro -so \"$gdbPath\"";
+                    $command = "ogrinfo -ro -so ". escapeshellarg($gdbPath);
                     $output = shell_exec($command);
                     preg_match_all('/Layer:\s+(.+?)\s+\(/', $output, $matches);
                     $layers = $matches[1];
                     $ata = [];
                     foreach ($layers as $layer) {
                         $outputPath = storage_path("app/documentos/juno/{$request->id_proyecto}/{$reporte->id}/{$layer}.json");
-                        $command = "ogr2ogr -f GeoJSON \"$outputPath\" \"$gdbPath\" \"$layer\"";
-                        $result = shell_exec($command);
+                        $command = "ogr2ogr -f GeoJSON ".escapeshellarg($outputPath)." " .  escapeshellarg($gdbPath) . " ".escapeshellarg($layer)."";
+                        $result = shell_exec($command. " 2>&1");
                     }
                 }
             }
